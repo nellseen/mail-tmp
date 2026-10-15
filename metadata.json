@@ -1,0 +1,6 @@
+{
+  "name": "AetherMail - Disposable Temporary Email",
+  "description": "Secure, instant disposable temporary email service powered by Mail.tm with a refined Neumorphic interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

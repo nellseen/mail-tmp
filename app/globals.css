@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #e6ecf5;
+    --bg-surface: #e6ecf5;
+    --bg-inset: #dee5f0;
+    --shadow-light: #ffffff;
+    --shadow-dark: #bcc4d2;
+    --accent-primary: #6366f1;
+    --accent-hover: #4f46e5;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-subtle: #cbd5e1;
+  }
+
+  .dark {
+    --bg-main: #131720;
+    --bg-surface: #181d28;
+    --bg-inset: #11141c;
+    --shadow-light: #242c3c;
+    --shadow-dark: #0c0e14;
+    --accent-primary: #6366f1;
+    --accent-hover: #818cf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-subtle: #2d3748;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom Soft Neumorphism Classes */
+.neu-flat {
+  background-color: var(--bg-surface);
+  box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+}
+
+.neu-elevated {
+  background-color: var(--bg-surface);
+  box-shadow: 9px 9px 20px var(--shadow-dark), -9px -9px 20px var(--shadow-light);
+}
+
+.neu-inset {
+  background-color: var(--bg-inset);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+}
+
+.neu-pill-active {
+  background-color: var(--bg-inset);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  color: var(--accent-primary);
+}
+
+.neu-button {
+  background-color: var(--bg-surface);
+  box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-button:hover:not(:disabled) {
+  box-shadow: 3px 3px 8px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
+  transform: translateY(1px);
+}
+
+.neu-button:active:not(:disabled) {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  transform: translateY(2px);
+}
+
+.neu-button-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 5px 5px 14px rgba(79, 70, 229, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.4);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-button-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  box-shadow: 3px 3px 8px rgba(79, 70, 229, 0.4), -2px -2px 6px rgba(255, 255, 255, 0.3);
+  transform: translateY(1px);
+}
+
+.neu-button-primary:active:not(:disabled) {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
+}
+
+.neu-button-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 4px 4px 12px rgba(220, 38, 38, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.3);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-button-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(1px);
+}
+
+.neu-button-danger:active:not(:disabled) {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
+}
+
+/* Custom Scrollbar for email viewers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-inset);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--shadow-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
